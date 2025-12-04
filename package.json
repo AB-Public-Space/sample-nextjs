@@ -13,8 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "eslint-config-next": "^15.4.5",
-    "next": "^15.4.5",
+    "eslint-config-next": "^15.4.8",
+    "next": "^15.4.8",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "serve": "^14.2.4"
