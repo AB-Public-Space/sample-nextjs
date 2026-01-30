@@ -1,5 +1,3 @@
-"use server";
-
 import Image from 'next/image'
 import { headers } from "next/headers";
 
@@ -9,7 +7,6 @@ export default async function Home() {
   // Convert to a plain object to easily stringify
   const headersObj = Object.fromEntries(headerList.entries());
   const headersString = JSON.stringify(headersObj, null, 2);
-
   
   return (
     <div className="min-h-screen lg:flex text-lg">
