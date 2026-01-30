@@ -1,6 +1,15 @@
+"use server";
+
 import Image from 'next/image'
 
 export default function Home() {
+  const headerList = await headers();
+  
+  // Convert to a plain object to easily stringify
+  const headersObj = Object.fromEntries(headerList.entries());
+  const headersString = JSON.stringify(headersObj, null, 2);
+
+  
   return (
     <div className="min-h-screen lg:flex text-lg">
       {/* left side */}
@@ -17,18 +26,7 @@ export default function Home() {
         </p>
 
         <div className="sm:flex">
-          <a
-            href="https://www.digitalocean.com/docs/app-platform"
-            className="block py-2 px-5 rounded shadow bg-gray-500 text-gray-100 sm:mr-2 mb-2 sm:mb-0"
-          >
-            View the Docs
-          </a>
-          <a
-            href="https://cloud.digitalocean.com/apps"
-            className="block py-2 px-5 rounded shadow bg-blue-500 text-blue-100"
-          >
-            View Your Dashboard
-          </a>
+          { headersString }
         </div>
       </div>
 
