@@ -1,6 +1,7 @@
 "use server";
 
 import Image from 'next/image'
+import { headers } from "next/headers";
 
 export default async function Home() {
   const headerList = await headers();
