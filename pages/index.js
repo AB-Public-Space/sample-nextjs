@@ -1,13 +1,6 @@
-import Image from 'next/image'
-import { headers } from "next/headers";
+import Image from 'next/image';
 
-export default async function Home() {
-  const headerList = await headers();
-  
-  // Convert to a plain object to easily stringify
-  const headersObj = Object.fromEntries(headerList.entries());
-  const headersString = JSON.stringify(headersObj, null, 2);
-  
+export default function Home({headersString}) {
   return (
     <div className="min-h-screen lg:flex text-lg">
       {/* left side */}
@@ -46,4 +39,11 @@ export default async function Home() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const { headers } = context.req;
+  const headersString = JSON.stringify(headers, null, 2);
+  
+  return { props: { headersString} };
 }
