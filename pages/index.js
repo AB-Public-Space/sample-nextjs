@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 
-export default function Home() {
+export default async function Home() {
   const headerList = await headers();
   
   // Convert to a plain object to easily stringify
