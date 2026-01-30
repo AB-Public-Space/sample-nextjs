@@ -17,7 +17,7 @@ export default function Home({headersString}) {
         </p>
 
         <div className="sm:flex">
-          { headersString }
+          <pre>{ headersString }</pre>
         </div>
       </div>
 
